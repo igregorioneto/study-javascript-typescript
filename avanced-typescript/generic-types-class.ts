@@ -3,6 +3,11 @@ interface Contact<B, K> {
   mail: K;
 }
 
+interface Person<A, B> {
+  name: A;
+  age: B;
+}
+
 class List<T> {
   private data: T[];
   constructor(...itens: T[]) {
@@ -28,3 +33,7 @@ contactList.add({phone: 5678, mail: 'mail3@domain'});
 contactList.remove({phone: 4321, mail: 'mail2@domain'});
 
 console.log(contactList.asArray());
+
+const personList = new List<Person<string, number>>();
+personList.add({name: 'José', age: 32});
+personList.add({name: 'Maria', age: 30});
